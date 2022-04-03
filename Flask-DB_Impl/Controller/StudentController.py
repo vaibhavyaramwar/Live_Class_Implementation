@@ -13,8 +13,6 @@ def getStudentSQLDBDetails():
 @app.route("/getStudentData",methods=["GET"])
 def getStudentMongoDBDetails():
     studentdata = MongoDB.getStudentData()
-    print(studentdata)
-    #return "success"
     return jsonify({"result":str(studentdata)})
 
 if __name__ == '__main__':
