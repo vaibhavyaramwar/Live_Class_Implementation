@@ -1,5 +1,5 @@
 from DB import SqlDb
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,json
 
 app = Flask(__name__)
 
@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route("/getStudentDetails", methods=["GET"])
 def getStudentDetails():
     studentlist = SqlDb.get_StudentData()
-    return jsonify(str(studentlist))
+    #dict(studentlist)
+    return jsonify({"result":studentlist})
 
 
 if __name__ == '__main__':
